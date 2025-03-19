@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Galaxy Chat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Splash Screen (unchanged) -->
+    <div id="splash-screen" style="display: flex;">
+            <div class="galaxy-logo">
+                <i class="fas fa-rocket fa-3x"></i>
+            </div>
+            <h1>Galaxy Chat</h1>
+            <p>Explore the Universe of Connections</p>
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+    <!-- Login Screen (with forgot password) -->
+    <div id="login-screen" class="auth-screen" style="display: none;">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h2>Welcome Back</h2>
+                <p>Ready to explore the galaxy?</p>
+            </div>
+            <div class="social-auth">
+                <button class="social-btn google">
+                    <i class="fab fa-google"></i>
+                    <span>Continue with Google</span>
+                </button>
+                <button class="social-btn github">
+                    <i class="fab fa-github"></i>
+                    <span>Continue with GitHub</span>
+                </button>
+            </div>
+            <div class="divider">
+                <span>or</span>
+            </div>
+            <form id="login-form" class="auth-form">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                    <span class="input-status"></span>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                    <i class="far fa-eye toggle-password"></i>
+                    <span class="input-status"></span>
+                </div>
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="primary-btn">
+                    <span>Login</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+            <p class="switch-auth">New to Galaxy Chat? <a href="#" id="show-signup">Sign Up</a></p>
+        </div>
+    </div>
+
+    <!-- Enhanced Signup Screen -->
+    <div id="signup-screen" class="auth-screen" style="display: none;">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h2>Join the Galaxy</h2>
+                <p>Create your space in the universe</p>
+            </div>
+            <form id="signup-form" class="auth-form">
+                <!-- Profile Picture Upload -->
+                <div class="profile-upload">
+                    <div class="profile-preview">
+                        <img src="assets/images/default-avatar.png" alt="Profile Preview" id="profile-preview">
+                        <div class="upload-overlay">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+                    <input type="file" id="profile-upload" accept="image/*" hidden>
+                </div>
+
+                <!-- User Details -->
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" required>
+                    <span class="input-status"></span>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                    <span class="input-status"></span>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                    <i class="far fa-eye toggle-password"></i>
+                    <div class="password-strength">
+                        <div class="strength-bar"></div>
+                        <span class="strength-text">Password Strength</span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <i class="far fa-eye toggle-password"></i>
+                    <span class="input-status"></span>
+                </div>
+
+                <!-- Bio Section -->
+                <div class="input-group">
+                    <i class="fas fa-comment-alt"></i>
+                    <textarea placeholder="Tell us about yourself..." maxlength="150" rows="3"></textarea>
+                    <span class="char-count">0/150</span>
+                </div>
+
+                <!-- Interests Tags -->
+                <div class="interests-section">
+                    <label>Select your interests</label>
+                    <div class="interests-tags">
+                        <span class="tag" data-interest="gaming">🎮 Gaming</span>
+                        <span class="tag" data-interest="music">🎵 Music</span>
+                        <span class="tag" data-interest="tech">💻 Tech</span>
+                        <span class="tag" data-interest="art">🎨 Art</span>
+                        <span class="tag" data-interest="sports">⚽ Sports</span>
+                        <span class="tag" data-interest="travel">✈️ Travel</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    <span>Create Account</span>
+                    <i class="fas fa-rocket"></i>
+                </button>
+            </form>
+            <p class="switch-auth">Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" class="modal hidden">
+        <!-- ... modal content will be added later ... -->
+    </div>
+
+    <script src="js/validation.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

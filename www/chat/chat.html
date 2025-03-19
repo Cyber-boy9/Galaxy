@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Chat</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/messages.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Left Sidebar - Chats List -->
+        <nav class="chat-sidebar">
+            <!-- User Profile Quick Access -->
+            <div class="current-user" id="current-user-profile">
+                <div class="user-avatar">
+                    <img src="../assets/images/default-avatar.jpg" alt="Cyber-boy9">
+                    <span class="status-indicator online"></span>
+                </div>
+                <div class="user-info">
+                    <h3>Cyber-boy9</h3>
+                    <p class="status">Online</p>
+                </div>
+            </div>
+
+            <!-- Chat Search -->
+            <div class="chat-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search messages or contacts">
+            </div>
+
+            <div class="chats-filter">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="recent">
+                        <i class="fas fa-clock"></i>
+                        <span>Recent</span>
+                    </button>
+                    <button class="filter-tab" data-filter="unread">
+                        <i class="fas fa-circle-dot"></i>
+                        <span>Unread</span>
+                        <span class="tab-badge">3</span>
+                    </button>
+                    <button class="filter-tab" data-filter="groups">
+                        <i class="fas fa-users"></i>
+                        <span>Groups</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chats List -->
+            <div class="chats-list">
+                <div class="chat-item active">
+                    <div class="chat-avatar">
+                        <img src="../assets/images/galaxy-group.jpg" alt="Space Explorers">
+                        <span class="status-dot"></span>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-name">
+                            Space Explorers
+                            <span class="chat-badge">Squad</span>
+                        </div>
+                        <div class="last-message">
+                            Let's do this! The cosmos awaits! ⭐️
+                        </div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">23:33</div>
+                        <div class="unread-count">3</div>
+                    </div>
+                </div>
+
+                <div class="chat-item">
+                    <div class="avatar-stack">
+                        <div class="stack-avatar">
+                            <img src="../assets/images/nova-team1.jpg" alt="Nova">
+                        </div>
+                        <div class="stack-avatar">
+                            <img src="../assets/images/nova-team2.jpg" alt="Team">
+                        </div>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-name">
+                            Nova Team
+                            <span class="chat-badge">Project</span>
+                        </div>
+                        <div class="last-message">
+                            <i class="fas fa-image"></i> Shared a galaxy photo
+                        </div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">23:30</div>
+                    </div>
+                </div>
+
+                <div class="chat-item">
+                    <div class="chat-avatar">
+                        <img src="../assets/images/stella.jpg" alt="Stella">
+                        <span class="status-dot"></span>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-name">Stella</div>
+                        <div class="last-message">
+                            <i class="fas fa-microphone"></i> Voice message (0:32)
+                        </div>
+                    </div>
+                    <div class="chat-meta">
+                        <div class="chat-time">23:25</div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-info">
+                    <h2>Space Explorers Group</h2>
+                    <p>5 members • 3 online</p>
+                </div>
+                <div class="chat-actions">
+                    <button class="icon-btn"><i class="fas fa-phone"></i></button>
+                    <button class="icon-btn"><i class="fas fa-video"></i></button>
+                    <button class="icon-btn info-toggle-btn"><i class="fas fa-info-circle"></i></button>
+                </div>
+            </div>
+
+            <!-- Messages Container -->
+            <div class="messages-container">
+                <!-- Messages will be dynamically inserted here -->
+                <div class="time-separator">
+                    Today 23:13
+                </div>
+
+                <!-- Your example messages go here -->
+                <div class="message incoming">
+                    <div class="message-avatar">
+                        <img src="../assets/images/user-avatar.jpg" alt="User">
+                    </div>
+                    <div class="message-content">
+                        <div class="message-bubble text">
+                            Hey Cyber-boy9! Ready to explore the galaxy? 🚀
+                            <div class="message-actions">
+                                <button class="action-btn"><i class="far fa-smile"></i></button>
+                                <button class="action-btn"><i class="fas fa-reply"></i></button>
+                                <button class="action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        <div class="message-meta">
+                            <span class="message-time">23:13</span>
+                        </div>
+                        <div class="message-reactions">
+                            <div class="reaction">
+                                🚀 <span class="reaction-count">3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message outgoing">
+                    <div class="message-content">
+                        <div class="message-bubble text">
+                            Let's do this! The cosmos awaits! ⭐️
+                        </div>
+                        <div class="message-meta">
+                            <span class="message-time">23:13</span>
+                            <div class="message-status status-read">
+                                <i class="fas fa-check-double"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add typing indicator -->
+                <div class="message incoming">
+                    <div class="message-avatar">
+                        <img src="../assets/images/user-avatar.jpg" alt="User">
+                    </div>
+                    <div class="typing-indicator">
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="chat-input-area">
+                <div class="voice-recorder">
+                    <div class="recording-indicator"></div>
+                    <div class="waveform">
+                        <div class="wave-bars">
+                            <!-- Generated dynamically via JS -->
+                        </div>
+                    </div>
+                    <div class="recording-timer">0:00</div>
+                    <div class="recording-actions">
+                        <button class="record-btn stop">
+                            <i class="fas fa-stop"></i>
+                        </button>
+                        <button class="record-btn send">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="attachment-btn">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Type a message...">
+                    <div class="input-actions">
+                        <button class="icon-btn"><i class="far fa-smile"></i></button>
+                        <button class="icon-btn"><i class="fas fa-paperclip"></i></button>
+                        <button class="icon-btn"><i class="fas fa-microphone"></i></button>
+                    </div>
+                </div>
+                <button class="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+
+                <div class="emoji-picker">
+                    <div class="emoji-categories">
+                        <button class="category-btn active" data-category="recent">
+                            <i class="fas fa-clock"></i>
+                        </button>
+                        <button class="category-btn" data-category="smileys">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                        <button class="category-btn" data-category="nature">
+                            <i class="fas fa-leaf"></i>
+                        </button>
+                        <button class="category-btn" data-category="food">
+                            <i class="fas fa-burger"></i>
+                        </button>
+                        <button class="category-btn" data-category="activities">
+                            <i class="fas fa-basketball"></i>
+                        </button>
+                        <button class="category-btn" data-category="travel">
+                            <i class="fas fa-rocket"></i>
+                        </button>
+                        <button class="category-btn" data-category="objects">
+                            <i class="fas fa-lightbulb"></i>
+                        </button>
+                        <button class="category-btn" data-category="symbols">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <div class="emoji-search">
+                        <input type="text" placeholder="Search emojis...">
+                        <i class="fas fa-search"></i>
+                    </div>
+
+                    <div class="emoji-grid">
+                        <!-- Emojis will be dynamically loaded here -->
+                    </div>
+
+                    <div class="recently-used">
+                        <div class="recently-used-title">Recently Used</div>
+                        <div class="recent-emojis">
+                            <!-- Recent emojis will be dynamically loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-overlay">
+                    <div class="attachment-modal">
+                        <h3>Add Attachment</h3>
+                        <div class="attachment-options">
+                            <div class="attach-option" data-type="image">
+                                <i class="fas fa-image"></i>
+                                <span>Photo & Video</span>
+                            </div>
+                            <div class="attach-option" data-type="document">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Document</span>
+                            </div>
+                            <div class="attach-option" data-type="audio">
+                                <i class="fas fa-music"></i>
+                                <span>Audio</span>
+                            </div>
+                            <div class="attach-option" data-type="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Location</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location Picker Modal -->
+                <div class="modal-overlay location-overlay">
+                    <div class="location-modal">
+                        <h3>Share Location</h3>
+                        <div class="location-map">
+                            <!-- Static map or map integration here -->
+                            <img src="https://maps.googleapis.com/maps/api/staticmap?center=40.712776,-74.005974&zoom=13&size=400x300&key=YOUR_API_KEY" alt="Map">
+                        </div>
+                        <div class="location-actions">
+                            <button class="location-cancel">Cancel</button>
+                            <button class="location-share">Share Location</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image Editor -->
+                <div class="image-editor">
+                    <div class="editor-header">
+                        <div class="editor-title">Edit Image</div>
+                        <div class="editor-actions">
+                            <button class="editor-btn cancel">Cancel</button>
+                            <button class="editor-btn save">Save & Send</button>
+                        </div>
+                    </div>
+
+                    <div class="editor-main">
+                        <div class="edit-preview">
+                            <!-- Canvas will be added here -->
+                        </div>
+
+                        <div class="edit-tools">
+                            <div class="text-overlay-tools">
+                                <input type="text" class="text-input" placeholder="Add text...">
+                                <div class="text-controls">
+                                    <button class="text-control" data-action="bold">
+                                        <i class="fas fa-bold"></i>
+                                    </button>
+                                    <button class="text-control" data-action="italic">
+                                        <i class="fas fa-italic"></i>
+                                    </button>
+                                    <button class="text-control" data-action="size-up">
+                                        <i class="fas fa-text-height"></i>
+                                    </button>
+                                    <button class="text-control" data-action="move">
+                                        <i class="fas fa-arrows-alt"></i>
+                                    </button>
+                                </div>
+
+                                <div class="color-picker">
+                                    <div class="color-option" style="background: #ffffff"></div>
+                                    <div class="color-option" style="background: #ff3b30"></div>
+                                    <div class="color-option" style="background: #4cd964"></div>
+                                    <div class="color-option" style="background: #007aff"></div>
+                                    <div class="color-option" style="background: #ffcc00"></div>
+                                </div>
+                            </div>
+
+                            <div class="crop-tools">
+                                <h4>Crop</h4>
+                                <div class="aspect-ratios">
+                                    <button class="aspect-ratio-btn active">Free</button>
+                                    <button class="aspect-ratio-btn">1:1</button>
+                                    <button class="aspect-ratio-btn">4:3</button>
+                                    <button class="aspect-ratio-btn">16:9</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar - Group/Chat Info -->
+        <aside class="info-sidebar">
+            <div class="info-header">
+                <button class="info-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="user-profile">
+                    <img src="path/to/profile-pic.jpg" alt="User Profile Picture" class="profile-pic">
+                    <h3 class="user-name">John Doe</h3>
+                    <span class="user-status"                    >Online</span>
+                </div>
+            </div>
+            <div class="info-content">
+                <div class="info-section">
+                    <h4>About</h4>
+                    <p class="user-about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                </div>
+                <div class="info-section">
+                    <h4>Contact Info</h4>
+                    <p class="user-email"><i class="fas fa-envelope"></i> johndoe@example.com</p>
+                    <p class="user-phone"><i class="fas fa-phone"></i> +123 456 7890</p>
+                </div>
+                <div class="info-section">
+                    <h4>Social Profiles</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="info-section">
+                    <h4>Group Members</h4>
+                    <ul class="group-members">
+                        <li><img src="../assets/images/member1.jpg" alt="Member 1"> Alice</li>
+                        <li><img src="../assets/images/member2.jpg" alt="Member 2"> Bob</li>
+                        <li><img src="../assets/images/member3.jpg" alt="Member 3"> Charlie</li>
+                        <li><img src="../assets/images/member4.jpg" alt="Member 4"> David</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <h4>Shared Files</h4>
+                    <ul class="shared-files">
+                        <li><i class="fas fa-file-alt"></i> ProjectPlan.docx</li>
+                        <li><i class="fas fa-file-image"></i> GalaxyPhoto.jpg</li>
+                        <li><i class="fas fa-file-pdf"></i> Report.pdf</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="../js/validation.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/messages.js"></script>
+    <script src="js/realtime.js"></script>
+    <script src="js/chat-list.js"></script>
+    <script src="js/emoji-picker.js"></script>
+    <script src="js/voice-recorder.js"></script>
+    <script src="js/attachments.js"></script>
+    <script src="js/info-sidebar.js"></script>
+</body>
+</html>
